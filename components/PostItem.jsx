@@ -1,8 +1,11 @@
-export function PostItem({ title, body  }) {
+export function PostItem({ post , handleClick }) {
     return (
         <li>
-            <h2>{title}</h2>
-            <p>{body}</p>
+            <h2>{post.title}</h2>
+            <button onClick={() =>
+            handleClick(post)}>
+                view
+            </button>
         </li>
         );
 }
