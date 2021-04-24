@@ -11,13 +11,13 @@ function App() {
   fetch(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`) 
   .then((response) => response.json())
   .then((postJson) => setPosts(postJson)) 
-  },[])
+  },[ setPosts])
 
   return (
     <div>
       <Header title="Hello To Blogs"/>
       <PostInput handleGetPosts={handleGetPosts}/>
-      <PostList handleView={} posts={posts}/>
+      <PostList handleView={()=> {}} posts={posts}/>
     </div>
   );
 }
