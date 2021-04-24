@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export function PostInput({ val, handleGetPosts }) {
+export function PostInput({ handleGetPosts }) {
     const [value, setValue] = useState("")
     return (
             <div>

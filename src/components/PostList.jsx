@@ -1,6 +1,6 @@
 import { PostItem } from "./PostItem"
 
-export function PostList({  posts , handleView}) {
+export function PostList({ posts , handleView}) {
     return (
         <ul>
             { posts.map(post => {
