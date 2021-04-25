@@ -48,7 +48,7 @@ function App() {
   } else {
     return (
       <div>
-        <Header title="Hello To Blogs" />
+        <Header title="Blog" />
         <PostInput handleGetPosts={handleGetPosts} />
         {loading ? (
           <div class="text-center">
