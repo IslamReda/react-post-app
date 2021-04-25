@@ -51,7 +51,9 @@ function App() {
         <Header title="Hello To Blogs" />
         <PostInput handleGetPosts={handleGetPosts} />
         {loading ? (
-          <h1>Enter User ID to load his posts</h1>
+          <div class="text-center">
+            <h4>Enter User ID to load his posts</h4>
+          </div>
         ) : (
           <PostList handleView={handleView} posts={posts} />
         )}
