@@ -1,27 +1,37 @@
-import { usePosts } from "./hooks/usePosts";
-import { Blog } from "./hooks/Blog";
+import { Router, Link } from "@reach/router";
+import { useState } from "react";
+import LoginContext from "./loginContext";
 
-import { Header } from "./components/Header";
-import { PostInput } from "./components/PostInput";
-import { PostList } from "./components/PostList";
-import { Post } from "./components/Post";
-import { CommentsList } from "./components/CommentsList";
-import { PostForm } from "./components/PostForm";
+// import { UsePosts } from "./hooks/blog";
+import { createPost } from "./hooks/createPost";
+
+import { Home } from "./pages/Home";
+import { PostView } from "./pages/PostView";
+import { Login } from "./pages/Login";
+import { Dashboard } from "./layouts/Dashboard";
 
 function App() {
-  let {
-    posts,
-    loading,
-    selectedPost,
-    postComments,
-    handleGetPosts,
-    handleShowPostComments,
-    handleView,
-  } = usePosts([]);
+  // let { createdPost, creatingPostLoading, handleSubmit } = createPost(null);
+  const [userName, setUserName] = useState(null);
+  const auth = useContext(LoginContext);
+ 
+  const handleLogin = () => {
+    setName(auth.userName);
+  };
 
-  let { createdPost, creatingPostLoading, handleSubmit } = Blog(null);
+  return (
+    <>
+      <Router>
+        <Login path="/login" />
+        <Dashboard path="/">
+          <Home userId={userId} path="/" />
+          <PostView path="post/:postId" />
+        </Dashboard>
+      </Router>
+    </>
+  );
 
-  return <PostForm handleSubmit={handleSubmit} />;
+  // return <PostForm handleSubmit={handleSubmit} />;
 
   // if (selectedPost) {
   //   handleShowPostComments();
