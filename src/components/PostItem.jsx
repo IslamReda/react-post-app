@@ -1,11 +1,18 @@
-export function PostItem({ post , handleView }) {
-    return (
-        <li>
-            <h2>{post.title}</h2>
-            <button onClick={() =>
-            handleView(post)}>
-                view post!
-            </button>
-        </li>
-        );
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Card, Button } from 'react-bootstrap'
+
+export function PostItem({ post, handleView }) {
+  return (
+
+    <Card className="mx-5 my-5">
+    <Card.Body>
+      <h3>{post.title}</h3>
+      <Button variant="outline-primary" type="button" className="mt-4" onClick={() => handleView(post)} >
+        View post
+      </Button>
+    </Card.Body>
+    </Card>
+  );
 }
+
+
