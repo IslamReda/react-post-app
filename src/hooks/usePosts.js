@@ -1,7 +1,7 @@
 import { useState, useCallback } from "react";
 
-export function usePosts(initialTasks) {
-  let [posts, setPosts] = useState(initialTasks);
+export function usePosts(initialState) {
+  let [posts, setPosts] = useState(initialState);
   let [loading, setLoading] = useState(true);
 
   let [selectedPost, setSelectedPost] = useState(null);
