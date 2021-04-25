@@ -1,11 +1,12 @@
 import { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Form, Button, Container, Col, Row } from 'react-bootstrap'
+import { Search } from 'react-bootstrap-icons';
 
 export function PostInput({ handleGetPosts }) {
   const [value, setValue] = useState("");
   return (
-    <Container>
+    <Container className="my-3">
       <Form>
         <Row>
           <Col sm={10}>
@@ -21,8 +22,8 @@ export function PostInput({ handleGetPosts }) {
                 setValue("");
               }}
             >
-              Search
-          </Button>
+              <Search />
+            </Button>
           </Col>
         </Row>
       </Form>
