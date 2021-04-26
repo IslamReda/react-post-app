@@ -12,12 +12,14 @@ import { Dashboard } from "./layouts/Dashboard";
 
 function App() {
   // let { createdPost, creatingPostLoading, handleSubmit } = createPost(null);
-  const [userName, setUserName] = useState(null);
-  const auth = useContext(LoginContext);
+  //For testing
+  const [userId, setUserId] = useState(1);
+  // const [userName, setUserName] = useState(null);
+  // const auth = useContext(LoginContext);
  
-  const handleLogin = () => {
-    setName(auth.userName);
-  };
+  // const handleLogin = () => {
+  //   setName(auth.userName);
+  // };
 
   return (
     <>

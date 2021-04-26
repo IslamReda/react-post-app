@@ -24,7 +24,7 @@ export function usePost(postId) {
   return value;
 }
 
-export function UsePostComments(postId) {
+export function usePostComments(postId) {
   let [postComments, setPostComments] = useState(null);
   let [areCommentsLoading, setAreCommentsLoading] = useState(false);
 
@@ -47,7 +47,7 @@ export function UsePostComments(postId) {
   return value;
 }
 
-export function UseUser(userId) {
+export function useUser(userId) {
   let [user, setUser] = useState(null);
   let [isUserLoading, setIsUserLoading] = useState(false);
 

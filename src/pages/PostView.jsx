@@ -1,13 +1,13 @@
 import { Header } from "../components/Header";
 import { Post } from "../components/Post";
 import { CommentsList } from "../components/CommentsList";
-import { UsePost, UsePostComments } from "../hooks/blog";
+import { usePost, usePostComments } from "../hooks/blog";
 import { Link, useParams } from "@reach/router";
 
 export function PostView() {
   const params = useParams();
-  const { post, isPostLoading } = UsePost(params.postId);
-  const { postComments, areCommentsLoading } = UsePostComments(params.postId);
+  const { post, isPostLoading } = usePost(params.postId);
+  const { postComments, areCommentsLoading } = usePostComments(params.postId);
   return (
     <>
       <div>

@@ -9,22 +9,24 @@ export function Login({ handleGetPosts }) {
   const [passValue, setPassValue] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = (userName, password) => {
 
-    fetch(
-      `https://jsonplaceholder.typicode.com/users?username=${userName}&email=${password}`
-    )
-      .then((response) => response.json())
-      .then((fetchedUsers) => {
-        if (fetchedUsers.length > 0) {
-          updateAutehnUser({ ...fetchedUsers[0], isAuthen: true, errorMsg: "" });
-          navigate("/");
-        } else {
-          navigate("/login");
-          updateAutehnUser({ errorMsg: "Invalid username or password.", isAuthen: false });
-        }
-      });
-  };
+  // I was being helped by Aya but then I told her to stop, this is one of her methods in her Repo
+  // const handleSubmit = (userName, password) => {
+
+  //   fetch(
+  //     `https://jsonplaceholder.typicode.com/users?username=${userName}&email=${password}`
+  //   )
+  //     .then((response) => response.json())
+  //     .then((fetchedUsers) => {
+  //       if (fetchedUsers.length > 0) {
+  //         updateAutehnUser({ ...fetchedUsers[0], isAuthen: true, errorMsg: "" });
+  //         navigate("/");
+  //       } else {
+  //         navigate("/login");
+  //         updateAutehnUser({ errorMsg: "Invalid username or password.", isAuthen: false });
+  //       }
+  //     });
+  // };
 
   return (
     <Container className="my-3">
@@ -57,7 +59,7 @@ export function Login({ handleGetPosts }) {
               type="button"
               className="my-4"
               onClick={() => {
-                handleSubmit(emailValue, passValue);
+                // handleSubmit(emailValue, passValue);
                 setEmailValue("");
                 setPassValue("");
               }}
